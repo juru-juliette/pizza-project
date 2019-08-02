@@ -75,3 +75,11 @@ ul {
     font-size: 20px;
     color: #6b8801;
   }
+  .footer{
+    text-align: center;
+    color:black;
+    margin-top: 50px;
+  }
+  h3{
+    font-size: 20px;
+  }
