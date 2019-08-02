@@ -24,30 +24,7 @@ $(document).ready(function() {
         var inputtedFlavour= $("input#flavour").val();
         var inputtedTopping = $("input#toppings").val();
         var inputtedNumber= $("input#number").val();
-        var newContact = new Contact(inputtedSize, inputtedCrust,inputtedFlavour,inputtedTopping,inputtedNumber);
+        var newOrder= new Quest(inputtedSize, inputtedCrust,inputtedFlavour,inputtedTopping,inputtedNumber)
    
     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
