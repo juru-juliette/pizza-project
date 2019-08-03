@@ -31,7 +31,8 @@ $(document).ready(function () {
     $("ul#call").append("<li><span class='pick'>" + order.fullOrder() + "</span></li>");
  
     $(".pick").last().click(function () {
-        $("#show-order").show();
+        $("#show-order").show()
+        $("#show-order h4").text(newOrder.fullOrder());;
         $(".checkbox").text(order.size);
         $(".crust").text(order.crust);
         $(".flavour").text(order.flavour);
