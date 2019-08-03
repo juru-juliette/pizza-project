@@ -81,3 +81,9 @@ ul {
   h3{
     font-size: 20px;
   }
+  #end{
+    text-align: center;
+    color:black;
+    margin-left: 490px;
+   background-color: transparent;
+  }
