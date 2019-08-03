@@ -9,13 +9,7 @@ function Quest(size, crust,flavour,toppings, number) {
 Quest.prototype.fullOrder = function () {
     return this.size + "," + this.crust + "," + this.toppings + "," + this.flavour + "," + this.number;
 }
-// function resetfield() {
-//     $("input#checkbox").val();
-//     $("select#crust").val();
-//     $("select#flavour").val();
-//     $("input#toppings").val();
-//     $("input#number").val();
-// }
+
 //user interface
 $(document).ready(function () {
     $("form.form-order").submit(function (event) {
@@ -24,15 +18,17 @@ $(document).ready(function () {
         var inputtedSize = $("input#checkbox").val();
         var inputtedCrust = $("select#crust").val();
         var inputtedTopping = $("select#flavour").val();
-        var inputtedFlavour = $("select#toppings").val();
+        var inputtedFlavour = $("input#toppings").val();
         var inputtedNumber = $("input#number").val();
 
 
         var order = new Quest(inputtedSize, inputtedCrust, inputtedFlavour, inputtedTopping, inputtedNumber)
         console.log(order);
+        
+    
     });
 
-    $("ul#call").append("<li><span class='pick'>" + order.size + "</span></li>");
+    $("ul#call").append("<li><span class='pick'>" + order.fullOrder() + "</span></li>");
  
     $(".pick").last().click(function () {
         $("#show-order").show();
@@ -45,3 +41,8 @@ $(document).ready(function () {
     });
 
 });
+// $("input#checkbox").val();
+//     $("select#crust").val();
+//     $("select#flavour").val();
+//     $("input#toppings").val();
+//     $("input#number").val();
