@@ -70,6 +70,9 @@ ul {
     background-image: url("../images/fn.jpg" );
     background-size: cover;
     background-repeat: no-repeat;
+  
+    width: 750px;
+  
   }
   #add{
     font-size: 20px;
