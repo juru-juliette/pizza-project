@@ -6,7 +6,7 @@ function Quest(size, crust,flavour,toppings, number) {
     this.toppings = toppings;
     this.number = number;
 }
-Quest.prototype.fullOrder = function () {
+Quest.prototype.orders = function () {
     return this.size + "," + this.crust + "," + this.toppings + "," + this.flavour + "," + this.number;
 }
 
@@ -28,11 +28,11 @@ $(document).ready(function () {
     
     });
 
-    $("ul#call").append("<li><span class='pick'>" + order.fullOrder() + "</span></li>");
+    $("ul#call").append("<li><span class='pick'>" + order.orders() + "</span></li>");
  
     $(".pick").last().click(function () {
         $("#show-order").show()
-        $("#show-order h4").text(newOrder.fullOrder());;
+        $("#show-order h4").text(newOrder.order());;
         $(".checkbox").text(order.size);
         $(".crust").text(order.crust);
         $(".flavour").text(order.flavour);
