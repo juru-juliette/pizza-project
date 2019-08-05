@@ -1,49 +1,54 @@
-//business logic
-function Quest(size, crust,flavour,toppings, number) {
-    this.size = size;
-    this.crust = crust;
-    this.flavour = flavour;
-    this.toppings = toppings;
-    this.number = number;
-}
-Quest.prototype.fullOrder = function () {
-    return this.size + "," + this.crust + "," + this.toppings + "," + this.flavour + "," + this.number;
+// business logic
+function Quest(size, crust, toppings, sizeP, crustP, toppingsP) {
+    this.pSize = size;
+    this.pCrust = crust;
+    this.pToppings = toppings;
+    // this.pNumber = number;
+    this.amountSize = sizeP;
+    this.amountCrust = crustP;
+    this.amountToppings = toppingsP;
+    // this.amountNumber = numberP;
+
 }
 
+
+
+Quest.prototype.fullOrder=function(){
+    return this.amountSize + this.amountCrust+ this.amountToppings  ;
+}
 //user interface
 $(document).ready(function () {
-    $("form.form-order").submit(function (event) {
+    // $("form.form-order").submit(function(event){
+    $(".press").last().click(function (event) {
         event.preventDefault();
+        $(".m").show();
+        var inputtedSize = $("#one option:selected").text();
+        var inputtedCrust = $("#two option:selected").text();
+        var inputtedTopping = $("#three option:selected").text();
+        // var inputtedNumber = $("#number input:selected").text();
+        var priceSize = parseInt($("#one option:selected").val());
+        var priceCrust = parseInt($("#two option:selected").val());
+        var priceToppings = parseInt($("#three option:selected").val());
+        // var priceNumber = parseInt($("#number input:selected").val());
 
-        var inputtedSize = $("input#checkbox").val();
-        var inputtedCrust = $("select#crust").val();
-        var inputtedTopping = $("select#flavour").val();
-        var inputtedFlavour = $("input#toppings").val();
-        var inputtedNumber = $("input#number").val();
+        var newPizza = new Quest(inputtedSize, inputtedCrust, inputtedTopping, priceSize, priceCrust, priceToppings);
+        console.log(newPizza);
+
+        //  $("ul#call").append("<p><span class='output'>" + newPizza.fullOrder() + "</span></p>");
 
 
-        var order = new Quest(inputtedSize, inputtedCrust, inputtedFlavour, inputtedTopping, inputtedNumber)
-        console.log(order);
-        
-    
+        // $("#show-order h4").text(newPizza.fullOrder());
+        $(".size").text(newPizza.pSize);
+        $(".crust").text(newPizza.pCrust);
+        $(".toppings").text(newPizza.pToppings);
+        // $(".number").text(newPizza.pNumber);
+        $(".total").text(newPizza.fullOrder());
+
+
+
     });
-
-    $("ul#call").append("<li><span class='pick'>" + order.fullOrder() + "</span></li>");
- 
-    $(".pick").last().click(function () {
-        $("#show-order").show()
-        $("#show-order h4").text(newOrder.fullOrder());;
-        $(".checkbox").text(order.size);
-        $(".crust").text(order.crust);
-        $(".flavour").text(order.flavour);
-        $(".toppings").text(order.toppings);
-        $(".number").text(order.number);
-
-    });
-
 });
-// $("input#checkbox").val();
-//     $("select#crust").val();
-//     $("select#flavour").val();
-//     $("input#toppings").val();
-//     $("input#number").val();
+
+
+
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -20,61 +20,49 @@
 
                     <div class="order">
                         <h2>ORDER NOW</h2>
-                        <form class="form-order" action="/action_page.html">
+                        <form class="form-order">
                             <div class="form-group row mx-1">
                                 <div id="col md-12">
                                     <div class="card2 card-image">
                                         <div id="add">
                                             <div id="checkbox">
-                                                <p>choose the size of pizza you want</p>
-                                                <label><input type="checkbox">Small</label>
-                                                <label><input type="checkbox">Medium</label>
-                                                <label><input type="checkbox">Large</label>
+                                                <label>choose the size of pizza you want:</label>
+                                                <select class="form-control" id="one">
+                                                    <option>select size you want</option>
+                                                    <option value="8000">Small:8000rwf</option>
+                                                    <option value="10000">Medium:10000rwf</option>
+                                                    <option value="15000">Large:15000rwf</option>
+                                                </select>
+
                                             </div>
                                             <div id="crust">
                                                 <label>choose crust you want:</label><br>
-                                                <select class="form-control">
-                                                    <option>Thin crust</option>
-                                                    <option>Thick Crust</option>
-                                                    <option>Pan crust</option>
-                                                    <option>Deep Crust</option>
-                                                    <option>Cheese Filled Crust</option>
+                                                <select class="form-control" id="two">
+                                                    <option>select crust</option>
+                                                    <option value="1500">Thin crust:1500rwf</option>
+                                                    <option value="1500">Thick Crust:1500rwf</option>
+                                                    <option value="1500">Pan crust:1500rwf</option>
+                                                    <option value="1500">Deep Crust:1500rwf</option>
+                                                    <option value="1500">Cheese Filled Crust:1500rwf</option>
                                                 </select>
                                             </div>
-                                            <div id="flavour">
-                                                <label>choose pizza flavour you want:</label><br>
-                                                <select class="form-control" >
-                                                    <option>Peppy paneer</option>
-                                                    <option>Gourmet</option>
-                                                    <option>Pepperoni</option>
-                                                    <option>Double cheese pizza</option>
-                                                    <option>Margherita pizza</option>
-                                                    <option>Hawaiian Pizza</option>
-                                                    <option>Peppers</option>
-                                                    <option>Mushrooms</option>
-                                                    <option>Spinach</option>
-                                                    <option>Pineapple</option>
-                                                </select>
-                                            </div>
+
                                             <div id="toppings">
                                                 <label>choose toppings you want:</label><br>
-
-                                                <label><input type="checkbox" value="">Pepperoni</label>
-                                                <label><input type="checkbox" value="">Hamburger</label>
-                                                <label><input type="checkbox" value="">Bacon</label>
-                                                <label><input type="checkbox" value="">Onions</label>
-                                                <label><input type="checkbox" value="">Black Olives</label><br>
-                                                <label><input type="checkbox" value="">Broccoli</label>
-                                                <label><input type="checkbox" value="">Peppers</label>
-                                                <label><input type="checkbox" value="">Mushrooms</label>
-                                                <label><input type="checkbox" value="">Spinach</label>
-                                                <label><input type="checkbox" value="">Pineapple</label>
-
+                                                <select class="form-control" id="three">
+                                                    <option>select toppings</option>
+                                                    <option value="2000">Broccoli:2000rwf</option>
+                                                    <option value="2000">Hamburger:2000rwf</option>
+                                                    <option value="2000">Pepperoni:2000rwf</option>
+                                                    <option value="2000">Bacon:2000rwf</option>
+                                                    <option value="2000">Onions:2000rwf</option>
+                                                    <option value="2000">Mushrooms:2000rwf</option>
+                                                </select>
                                             </div>
-                                            <div id="number">
+                                            <!-- <div id="number">
                                                 <label>pick number of pizza you want:</label>
                                                 <input type="number" class="form-control" name="" min='1'>
-                                            </div>
+                                            </div> -->
                                             <div class="button">
                                                 <button type="submit" class="button" id="order">another-order</button>
                                                 <button type="submit" class="press" id="send">Check-Out</button>
@@ -88,26 +76,31 @@
 
                         </form>
                     </div>
-                    <ul id="call">
 
-                    </ul>
                     <div class="col-md-6">
+                        <h3>This is your order</h3>
+                        <ul id="call">
+
+                        </ul>
                         <div id="show-order">
-                         <h3>This is your order</h3>
-                         <h4></h4>
-                            <p>size: <span class="size"></span></p>
-                            <p>crust: <span class="crust"></span></p>
-                            <p>toppings:<span class="toppings"></span></p>
-                            <p>flavour:<span class="flavour"></span></p>
-                            <p>number:<span class="number"></span></p>
+
+                            <h4></h4>
+                            <div class="m">
+                                <p>size <span class="size"></span></p>
+                                <p>crust <span class="crust"></span></p>
+                                <p>toppings <span class="toppings"></span></p>
+                                <!-- <p>number:<span class="number"></span></p> -->
+                                <p>total cost:<span class="total"></span></p>
+
+                            </div>
 
                             <ul id="check">
 
                             </ul>
                         </div>
                         <footer id="end">
-                            <p>Pizza Quest <br>contact us on:+250787873242 <br>+250789557608</p>
-                            
+                            <p>Pizza Quest <br>contact us on:+250787873242 <br> +250789557608</p>
+
                         </footer>
                     </div>
 
@@ -129,7 +122,7 @@
     </div>
 
 
-    <!-- <script src="js/jquery-3.4.1.js"></script> -->
+    <script src="js/jquery-3.4.1.js"></script>
     <script src="js/script.js"></script>
 </body>
 
